@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative mt-24">
+      <div className="relative mt-14">
         {/* Image Container */}
         <div className="relative">
           <img

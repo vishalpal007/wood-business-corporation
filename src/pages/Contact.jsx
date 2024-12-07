@@ -52,8 +52,8 @@ const Contact = () => {
     }, [controlsForm, controlsDetails]);
 
     return (
-        <div className="p-6 bg-white">
-            <div className="max-w-7xl mx-auto px-5 mt-16">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-10 bg-white mt-6">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-8">
                 <motion.h1
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -63,22 +63,23 @@ const Contact = () => {
                     Contact Us
                 </motion.h1>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                    {/* Form Section */}
+                {/* Main Grid Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start">
+                    {/* Contact Form */}
                     <motion.div
                         ref={formRef}
                         initial={{ opacity: 0, translateY: 50 }}
                         animate={controlsForm}
                         transition={{ duration: 1 }}
-                        className="bg-gray-50 p-8 rounded-lg shadow-md"
+                        className="bg-gray-50 p-4 md:p-6 lg:p-8 rounded-lg shadow-md"
                     >
-                        <h2 className="text-2xl font-bold mb-4 text-gray-800">Get in Touch</h2>
-                        <form onSubmit={formik.handleSubmit} className="space-y-5">
+                        <h2 className="text-xl md:text-2xl font-bold mb-3 text-gray-800">Get in Touch</h2>
+                        <form onSubmit={formik.handleSubmit} className="space-y-4 md:space-y-5">
                             <input
                                 {...formik.getFieldProps("name")}
                                 type="text"
                                 placeholder="Your Name"
-                                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                className="w-full p-2 md:p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                             />
                             {formik.touched.name && formik.errors.name && (
                                 <p className="text-red-500 text-sm">{formik.errors.name}</p>
@@ -88,7 +89,7 @@ const Contact = () => {
                                 {...formik.getFieldProps("email")}
                                 type="email"
                                 placeholder="Your Email"
-                                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                className="w-full p-2 md:p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                             />
                             {formik.touched.email && formik.errors.email && (
                                 <p className="text-red-500 text-sm">{formik.errors.email}</p>
@@ -98,7 +99,7 @@ const Contact = () => {
                                 {...formik.getFieldProps("subject")}
                                 type="text"
                                 placeholder="Subject"
-                                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                className="w-full p-2 md:p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                             />
                             {formik.touched.subject && formik.errors.subject && (
                                 <p className="text-red-500 text-sm">{formik.errors.subject}</p>
@@ -107,8 +108,8 @@ const Contact = () => {
                             <textarea
                                 {...formik.getFieldProps("message")}
                                 placeholder="Your Message"
-                                rows="4"
-                                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                rows="3"
+                                className="w-full p-2 md:p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                             ></textarea>
                             {formik.touched.message && formik.errors.message && (
                                 <p className="text-red-500 text-sm">{formik.errors.message}</p>
@@ -123,19 +124,19 @@ const Contact = () => {
                         </form>
                     </motion.div>
 
-                    {/* Contact Details Section */}
+                    {/* Contact Details */}
                     <motion.div
                         ref={detailsRef}
                         initial={{ opacity: 0, translateY: 50 }}
                         animate={controlsDetails}
                         transition={{ duration: 1 }}
-                        className="space-y-8"
+                        className="space-y-4 md:space-y-6 lg:space-y-8"
                     >
-                        <div className="flex items-start space-x-4">
-                            <IoLocationSharp className="text-2xl text-gray-800 mt-2" />
+                        <div className="flex items-start space-x-3 md:space-x-5">
+                            <IoLocationSharp className="text-2xl md:text-3xl text-gray-800" />
                             <div>
-                                <h3 className="font-bold text-xl text-gray-800">Our Location</h3>
-                                <p className="text-gray-600">
+                                <h3 className="font-semibold text-gray-800 text-lg md:text-xl">Our Location</h3>
+                                <p className="text-sm md:text-base text-gray-600 leading-snug">
                                     Office No.1, Ground Floor, Golden City Centre,
                                     <br />
                                     Besides Prozone Mall, Chikhalthana, Chh. Sambhajinagar,
@@ -143,32 +144,30 @@ const Contact = () => {
                                     Maharashtra - 431003
                                 </p>
                                 <iframe
-                                    className="mt-4 rounded-lg w-full h-60 border border-gray-200 shadow-sm"
+                                    className="mt-4 w-full h-48 md:h-64 border border-gray-200 rounded-lg"
                                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14977.368332236913!2d75.37303376507336!3d19.875228081512407!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDUyJzMxLjEiTiA3NcKwMjInMjMuMCJF!5e0!3m2!1sen!2sin!4v1648745125289!5m2!1sen!2sin"
-                                    allowFullScreen=""
+                                    allowFullScreen
                                     loading="lazy"
                                 ></iframe>
                             </div>
                         </div>
 
-                        <div className="flex items-center space-x-4">
-                            <IoMailSharp className="text-2xl text-gray-800" />
+                        <div className="flex items-center space-x-3 md:space-x-5">
+                            <IoMailSharp className="text-2xl md:text-3xl text-gray-800" />
                             <div>
-                                <h3 className="font-bold text-xl text-gray-800">Email Us</h3>
                                 <a
                                     href="mailto:p.vishal1100@gmail.com"
-                                    className="text-gray-800 hover:underline"
+                                    className="text-sm md:text-base text-gray-800 hover:underline"
                                 >
                                     p.vishal1100@gmail.com
                                 </a>
                             </div>
                         </div>
 
-                        <div className="flex items-center space-x-4">
-                            <IoCall className="text-2xl text-gray-800" />
+                        <div className="flex items-center space-x-3 md:space-x-5">
+                            <IoCall className="text-2xl md:text-3xl text-gray-800" />
                             <div>
-                                <h3 className="font-bold text-xl text-gray-800">Call Us</h3>
-                                <a href="tel:8208543875" className="text-gray-800 hover:underline">
+                                <a href="tel:8208543875" className="text-sm md:text-base text-gray-800 hover:underline">
                                     +91 82085 43875
                                 </a>
                             </div>

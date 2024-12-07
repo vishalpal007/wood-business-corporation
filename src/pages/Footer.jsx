@@ -1,55 +1,52 @@
 import React from "react";
 import techSurya from "/images/techSurya.png";
-import Logo from "/images/logo.png";
+import Logo from "/images/footerLogo.png";
 
 const Footer = () => {
   return (
-    <footer
-      className="py-12"
-      style={{
-        background: "linear-gradient(135deg, #000000, #222222)",
-      }}
-    >
-      <div className="container mx-auto px-6 lg:px-16 text-white">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
-          {/* Grid Item 1: Logo */}
-          <div className="flex flex-col items-center md:items-start">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="w-40 h-36 md:w-52 md:h-48 object-contain mb-4 bg-white rounded-lg"
-            />
-            <p className="text-sm font-medium text-gray-300 text-center md:text-left leading-relaxed">
-              Dedicated to providing exceptional service and high-quality products.
+    <footer className="py-12 bg-gradient-to-br from-black to-gray-800">
+      <div className="container mx-auto px-4 sm:px-6 md:px-16 text-white">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-left">
+          {/* Logo Section */}
+          <div className="flex flex-col items-start max-w-full px-2">
+            <div className="flex justify-start md:justify-center w-full">
+              <img
+                src={Logo}
+                alt="Logo"
+                className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-48 object-contain mb-4 bg-white rounded-lg"
+              />
+            </div>
+            <p className="text-sm font-medium text-gray-300 text-start w-10/12 md:w-full md:text-center leading-relaxed">
+              We strive to provide top-quality solutions with excellence and precision.
             </p>
           </div>
 
-          {/* Grid Item 2: Office Address */}
-          <div>
+          {/* Office Address */}
+          <div className="text-start md:text-left w-10/12 md:max-w-full px-2">
             <h3 className="text-lg font-bold mb-2 text-gray-100">Office Address</h3>
             <p className="text-sm font-medium text-gray-400 leading-relaxed">
-              Office No.1, Ground Floor, Golden City Centre, Besides Prozone Mall, Chikhalthana, Chh. Sambhajinagar,
-              Maharashtra - 431003
+              Office No.1, Ground Floor, Golden City Centre, <br />
+              Besides Prozone Mall, Chikhalthana, Chh. Sambhajinagar, Maharashtra - 431003
             </p>
           </div>
 
-          {/* Grid Item 3: Warehouses and Factories */}
-          <div>
+          {/* Locations */}
+          <div className="text-start md:text-left w-10/12 md:max-w-full px-2">
             <h3 className="text-lg font-bold mb-2 text-gray-100">Locations</h3>
-            <p className="text-sm font-medium text-gray-400 leading-relaxed mb-3">
-              <strong>Warehouse 1:</strong> Godown No 8, Kanchan Compound, Dapoda Road, Behind Kanchan Kata, Bhiwandi – 421302
+            <p className="text-sm font-medium text-gray-400 leading-relaxed mb-2">
+              <strong>Warehouse 1:</strong> Godown No 8, Kanchan Compound, Dapoda Road, Bhiwandi – 421302
             </p>
-            <p className="text-sm font-medium text-gray-400 leading-relaxed mb-3">
-              <strong>Warehouse 2:</strong> L.Survey No.200, Gandhidham Modvadar Road, Modvadar, Kachchh Gujarat-370110
+            <p className="text-sm font-medium text-gray-400 leading-relaxed mb-2">
+              <strong>Warehouse 2:</strong> L.Survey No.200, Gandhidham Modvadar Road, Modvadar, Kachchh Gujarat - 370110
             </p>
             <p className="text-sm font-medium text-gray-400 leading-relaxed">
-              <strong>Factory:</strong> Gut No.12, Mirzapur Shivas, Tal. Gangapur, Jikthan, Waluj, Sambhajinagar,
-              Maharashtra – 431136
+              <strong>Factory:</strong> Gut No.12, Mirzapur Shivas, Tal. Gangapur, Waluj, Sambhajinagar, Maharashtra – 431136
             </p>
           </div>
 
-          {/* Grid Item 4: Contact and Legal Info */}
-          <div>
+          {/* Contact & Legal Info */}
+          <div className="text-start md:text-left w-10/12 md:max-w-full px-2">
             <h3 className="text-lg font-bold mb-2 text-gray-100">Contact & Legal</h3>
             <p className="text-sm font-medium text-gray-400 mb-2">
               <strong>Email:</strong>{" "}
@@ -60,23 +57,29 @@ const Footer = () => {
                 p.vishal1100@gmail.com
               </a>
             </p>
-            <p className="text-sm font-medium text-gray-400">
+            <p className="text-sm font-medium text-gray-400 mb-2">
               <strong>GST No:</strong> 27AJJPP0464D1ZA
             </p>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 text-center border-t border-gray-600 pt-6">
-          <div className="flex items-center justify-center flex-col md:flex-row">
-            <p className="text-sm mb-4 md:mb-0 md:mr-4 text-gray-400">
+        <div className="mt-12 text-center md:text-center border-t border-gray-600 pt-6">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-center gap-4 md:gap-8 px-2 max-w-full">
+            {/* Copyright */}
+            <p className="text-sm text-gray-400 leading-tight text-center md:text-center">
               © 2024 Tech Surya IT Solution. All Rights Reserved.
             </p>
-            <a href="https://techsuryaitsolution.com/" target="_blank" rel="noopener noreferrer">
+            {/* Logo */}
+            <a
+              href="https://techsuryaitsolution.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={techSurya}
                 alt="Tech Surya"
-                className="w-20 h-10"
+                className="w-20 h-10 sm:w-24 sm:h-12 md:w-24 md:h-10"
               />
             </a>
           </div>

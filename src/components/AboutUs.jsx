@@ -8,7 +8,6 @@ const AboutUs = () => {
     const { ref: leftRef2, inView: leftInView2 } = useInView({ triggerOnce: true });
     const { ref: rightRef2, inView: rightInView2 } = useInView({ triggerOnce: true });
 
-    // Table Data for Indian and Imported MDF
     const tableData = [
         {
             title: 'Indian MDF',
@@ -33,14 +32,19 @@ const AboutUs = () => {
         },
     ];
 
-    // Table Rendering Function
     const renderTable = (data) => (
-        <table className="min-w-full bg-white border border-gray-200">
+        <table className="min-w-full bg-white border border-gray-200 text-sm md:text-base">
             <thead className="bg-gray-100">
                 <tr>
-                    <th className="px-4 py-2 border-b text-left text-gray-700 font-semibold">Thickness (mm)</th>
-                    <th className="px-4 py-2 border-b text-left text-gray-700 font-semibold">Plain Pr Sq Ft (Rs)</th>
-                    <th className="px-4 py-2 border-b text-left text-gray-700 font-semibold">Sheet Rate + With GST</th>
+                    <th className="px-2 sm:px-4 py-2 border-b text-left text-gray-700 font-semibold">
+                        Thickness (mm)
+                    </th>
+                    <th className="px-2 sm:px-4 py-2 border-b text-left text-gray-700 font-semibold">
+                        Plain Pr Sq Ft (Rs)
+                    </th>
+                    <th className="px-2 sm:px-4 py-2 border-b text-left text-gray-700 font-semibold">
+                        Sheet Rate + With GST
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -49,9 +53,9 @@ const AboutUs = () => {
                         key={index}
                         className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-600`}
                     >
-                        <td className="px-4 py-2 border-b">{item.thickness}</td>
-                        <td className="px-4 py-2 border-b">{item.price}</td>
-                        <td className="px-4 py-2 border-b">{item.gst}</td>
+                        <td className="px-2 sm:px-4 py-2 border-b">{item.thickness}</td>
+                        <td className="px-2 sm:px-4 py-2 border-b">{item.price}</td>
+                        <td className="px-2 sm:px-4 py-2 border-b">{item.gst}</td>
                     </tr>
                 ))}
             </tbody>
@@ -86,31 +90,40 @@ const AboutUs = () => {
             </style>
 
             {/* Section 1: Company Info */}
-            <div className="max-w-6xl mx-auto bg-white p-6 md:p-12 rounded-lg shadow-lg">
+            <div className="max-w-6xl mx-auto bg-white p-4 sm:p-6 md:p-12 rounded-lg shadow-lg">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div
                         ref={leftRef1}
                         className={`flex flex-col justify-center ${leftInView1 ? 'animate-slide-in-left' : ''}`}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                             Welcome to Shree Balaji Corporation
                         </h2>
-                        <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
-                            A trusted name in the industry, we specialize in importing and trading premium-quality
-                            <span className="font-semibold text-gray-900"> MDF, Pine Wood, Polyester Fiber,</span> and
-                            <span className="font-semibold text-gray-900"> Emulsion Mats.</span>
-                            With an unwavering commitment to excellence, we ensure our customers receive products
-                            that meet the highest standards of quality and sustainability.
+                        <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
+                            A trusted name in the industry, we specialize in importing and trading premium-quality{' '}
+                            <span className="font-semibold text-gray-900"> MDF, Pine Wood, Polyester Fiber,</span> and{' '}
+                            <span className="font-semibold text-gray-900"> Emulsion Mats.</span> With an unwavering
+                            commitment to excellence, we ensure our customers receive products that meet the highest
+                            standards of quality and sustainability.
                         </p>
-                        <ul className="list-disc pl-6 text-gray-700 text-lg md:text-xl mb-6 space-y-2">
-                            <li><span className="font-semibold text-gray-900">Quality Assurance:</span> Handpicked materials ensuring durability.</li>
-                            <li><span className="font-semibold text-gray-900">Global Sourcing:</span> Imported from the best manufacturers worldwide.</li>
-                            <li><span className="font-semibold text-gray-900">Customer-Centric:</span> Tailored solutions for diverse business needs.</li>
+                        <ul className="list-disc pl-4 sm:pl-6 text-gray-700 text-sm sm:text-base md:text-lg mb-6 space-y-2">
+                            <li>
+                                <span className="font-semibold text-gray-900">Quality Assurance:</span> Handpicked
+                                materials ensuring durability.
+                            </li>
+                            <li>
+                                <span className="font-semibold text-gray-900">Global Sourcing:</span> Imported from the
+                                best manufacturers worldwide.
+                            </li>
+                            <li>
+                                <span className="font-semibold text-gray-900">Customer-Centric:</span> Tailored solutions
+                                for diverse business needs.
+                            </li>
                         </ul>
-                        <div className="text-end">
+                        <div className="text-start md:text-end">
                             <Link
                                 to="/about"
-                                className="bg-gray-800 text-white text-lg font-medium py-2 px-4 rounded-lg shadow hover:bg-red-900 transition"
+                                className="bg-gray-800 text-white text-sm sm:text-base font-medium py-2 px-4 rounded-lg shadow hover:bg-red-900 transition"
                             >
                                 Explore Our Products
                             </Link>
@@ -124,7 +137,7 @@ const AboutUs = () => {
                         <img
                             src="https://images.unsplash.com/photo-1611491064644-a9ff17219a53?q=80&w=800&auto=format&fit=crop"
                             alt="Company"
-                            className="rounded-lg shadow-md hover-zoom max-w-md"
+                            className="rounded-lg shadow-md hover-zoom w-full max-w-xs sm:max-w-md h-auto object-cover"
                         />
                     </div>
                 </div>
@@ -134,10 +147,10 @@ const AboutUs = () => {
             {tableData.map((table, index) => (
                 <div
                     key={index}
-                    className="max-w-6xl mx-auto mt-10 bg-white p-6 md:p-12 rounded-lg shadow-lg"
+                    className="max-w-6xl mx-auto mt-10 bg-white p-4 sm:p-6 md:p-12 rounded-lg shadow-lg"
                     ref={index % 2 === 0 ? leftRef2 : rightRef2}
                 >
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-6">{table.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6">{table.title}</h3>
                     {renderTable(table.data)}
                 </div>
             ))}
