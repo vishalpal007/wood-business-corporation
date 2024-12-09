@@ -33,34 +33,46 @@ const AboutUs = () => {
     ];
 
     const renderTable = (data) => (
-        <table className="min-w-full bg-white border border-gray-200 text-sm md:text-base">
-            <thead className="bg-gray-100">
-                <tr>
-                    <th className="px-2 sm:px-4 py-2 border-b text-left text-gray-700 font-semibold">
-                        Thickness (mm)
-                    </th>
-                    <th className="px-2 sm:px-4 py-2 border-b text-left text-gray-700 font-semibold">
-                        Plain Pr Sq Ft (Rs)
-                    </th>
-                    <th className="px-2 sm:px-4 py-2 border-b text-left text-gray-700 font-semibold">
-                        Sheet Rate + With GST
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((item, index) => (
-                    <tr
-                        key={index}
-                        className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-600`}
-                    >
-                        <td className="px-2 sm:px-4 py-2 border-b">{item.thickness}</td>
-                        <td className="px-2 sm:px-4 py-2 border-b">{item.price}</td>
-                        <td className="px-2 sm:px-4 py-2 border-b">{item.gst}</td>
+        <div className="overflow-x-auto">
+            <table className="w-full bg-white text-sm md:text-base rounded-lg shadow-md border border-gray-200">
+                <thead>
+                    <tr className="bg-gray-950 text-white">
+                        <th className="px-4 sm:px-6 py-2 sm:py-4 text-left font-bold text-sm md:text-base tracking-wide">
+                            Thickness (mm)
+                        </th>
+                        <th className="px-4 sm:px-6 py-2 sm:py-4 text-left font-bold text-sm md:text-base tracking-wide">
+                            Plain Per Sq Ft (Rs)
+                        </th>
+                        <th className="px-4 sm:px-6 py-2 sm:py-4 text-left font-bold text-sm md:text-base tracking-wide">
+                            Sheet Rate + With GST
+                        </th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {data.map((item, index) => (
+                        <tr
+                            key={index}
+                            className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'
+                                } hover:bg-gray-300 transition duration-200`}
+                        >
+                            <td className="px-4 sm:px-6 py-2 sm:py-4 text-gray-800 text-xs sm:text-sm md:text-base">
+                                {item.thickness}
+                            </td>
+                            <td className="px-4 sm:px-6 py-2 sm:py-4 text-gray-800 text-xs sm:text-sm md:text-base">
+                                {item.price}
+                            </td>
+                            <td className="px-4 sm:px-6 py-2 sm:py-4 text-gray-800 text-xs sm:text-sm md:text-base">
+                                {item.gst}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
+
+
+
 
     return (
         <div className="bg-gray-50 py-10 px-4">
@@ -122,7 +134,7 @@ const AboutUs = () => {
                         </ul>
                         <div className="text-start md:text-end">
                             <Link
-                                to="/about"
+                                to="/services"
                                 className="bg-gray-800 text-white text-sm sm:text-base font-medium py-2 px-4 rounded-lg shadow hover:bg-red-900 transition"
                             >
                                 Explore Our Products
