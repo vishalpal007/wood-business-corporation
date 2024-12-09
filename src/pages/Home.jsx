@@ -1,5 +1,5 @@
 import React from 'react';
-import images from "../image/home.png";
+import images from "/images/home.png";
 import Contact from './Contact';
 import { IoMdContacts } from "react-icons/io";
 import About from '../components/AboutUs';
@@ -15,11 +15,11 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative mt-14">
+      <div className="relative mt-16">
         {/* Image Container */}
         <div className="relative">
           <img
-            className="h-auto w-full max-h-[370px] object-cover md:max-h-[480px]"
+            className="h-auto w-full max-h-screen object-cover md:max-h-screen"
             src={images}
             alt="Welcome banner for the homepage"
           />

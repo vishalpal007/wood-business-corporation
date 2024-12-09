@@ -7,17 +7,17 @@ const Footer = () => {
     <footer className="py-12 bg-gradient-to-br from-black to-gray-800">
       <div className="container mx-auto px-4 sm:px-6 md:px-16 text-white">
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 text-left">
           {/* Logo Section */}
           <div className="flex flex-col items-start max-w-full px-2">
             <div className="flex justify-start md:justify-center w-full">
               <img
                 src={Logo}
                 alt="Logo"
-                className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-48 object-contain mb-4 bg-white rounded-lg"
+                className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-48 object-contain mb-4 bg-white "
               />
             </div>
-            <p className="text-sm font-medium text-gray-300 text-start w-10/12 md:w-full md:text-center leading-relaxed">
+            <p className="text-sm font-medium text-gray-300 text-start w-10/12 md:w-full  leading-relaxed ">
               We strive to provide top-quality solutions with excellence and precision.
             </p>
           </div>
@@ -64,10 +64,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 text-center md:text-center border-t border-gray-600 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-center gap-4 md:gap-8 px-2 max-w-full">
+        <div className="mt-12 text-center border-t border-gray-600 pt-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 px-4 max-w-screen-xl mx-auto">
             {/* Copyright */}
-            <p className="text-sm text-gray-400 leading-tight text-center md:text-center">
+            <p className="text-sm text-gray-400 leading-tight text-center">
               © 2024 Tech Surya IT Solution. All Rights Reserved.
             </p>
             {/* Logo */}
@@ -75,15 +75,17 @@ const Footer = () => {
               href="https://techsuryaitsolution.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="flex items-center justify-center"
             >
               <img
                 src={techSurya}
                 alt="Tech Surya"
-                className="w-20 h-10 sm:w-24 sm:h-12 md:w-24 md:h-10"
+                className="h-auto max-h-10 w-auto object-contain"
               />
             </a>
           </div>
         </div>
+
       </div>
     </footer>
   );
