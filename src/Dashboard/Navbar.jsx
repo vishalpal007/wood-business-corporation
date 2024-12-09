@@ -36,7 +36,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-black text-sm md:text-base font-semibold px-3 py-2 rounded-lg transition ${isActive ? 'bg-gray-950 text-white' : 'hover:bg-gray-950 hover:text-white '}`
+                  `text-black text-sm md:text-base font-semibold px-3 py-2 rounded-lg transition ${isActive ? ' text-red-950' : ' hover:text-red-950 '}`
                 }
               >
                 {item.name}
