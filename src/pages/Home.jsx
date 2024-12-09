@@ -8,11 +8,11 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative mt-16">
+      <div className="relative mt-18">
         {/* Image Container */}
         <div className="relative">
           <img
-            className="h-auto w-full max-h-screen object-cover md:max-h-screen"
+            className="h-screen w-full object-contain"
             src={images}
             alt="Welcome banner for the homepage"
           />

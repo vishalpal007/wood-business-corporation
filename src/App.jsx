@@ -11,6 +11,7 @@ import Services from './pages/Services';
 // Components
 import Navbar from './Dashboard/Navbar';
 import Footer from './pages/Footer';
+import ProductDetails from './pages/ProductDetails';
 
 // App Component
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/product/:type" element={<ProductDetails />} />
         </Routes>
 
         {/* Footer */}

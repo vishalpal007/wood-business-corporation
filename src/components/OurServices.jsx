@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const OurServices = () => {
     const { ref: imgRef1, inView: imgInView1 } = useInView({ triggerOnce: true });
@@ -97,53 +98,48 @@ const OurServices = () => {
 
 
 
-                    <motion.div
-                        ref={imgRef3}
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: imgInView3 ? 1 : 0,
-                            y: imgInView3 ? 0 : 50,
-                        }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="flex flex-col items-center bg-white rounded-lg shadow-lg hover:shadow-2xl transform transition-all duration-300 ease-in-out p-4"
-                    >
-                        <img
-                            src="https://as2.ftcdn.net/v2/jpg/01/31/02/53/1000_F_131025337_JGueqd3lVxAZ7MNHT4ODrW61OJYehU6q.jpg"
-                            alt="African Pine"
-                            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-t-lg"
-                        />
-                        <div className="p-4 text-center">
-                            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Indian MDF</h3>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 font-serif leading-tight text-start">
-                                Indian MDF is a cost-effective, locally made material suitable for budget-friendly furniture and interiors, offering decent quality but less precision than imported MDF.
-                            </p>
-                        </div>
-                    </motion.div>
+                    <Link to="/product/indianMDF">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="flex flex-col items-center bg-white rounded-lg shadow-lg hover:shadow-2xl transform transition-all duration-300 ease-in-out p-4"
+                        >
+                            <img
+                                src="https://as2.ftcdn.net/v2/jpg/01/31/02/53/1000_F_131025337_JGueqd3lVxAZ7MNHT4ODrW61OJYehU6q.jpg"
+                                alt="Indian MDF"
+                                className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-t-lg"
+                            />
+                            <div className="p-4 text-center">
+                                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Indian MDF</h3>
+                                <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 font-serif leading-tight text-start">
+                                    Indian MDF is a cost-effective, locally made material suitable for budget-friendly furniture and interiors.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </Link>
 
-
-
-                    <motion.div
-                        ref={imgRef3}
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: imgInView3 ? 1 : 0,
-                            y: imgInView3 ? 0 : 50,
-                        }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="flex flex-col items-center bg-white rounded-lg shadow-lg hover:shadow-2xl transform transition-all duration-300 ease-in-out p-4"
-                    >
-                        <img
-                            src="https://5.imimg.com/data5/ZB/MU/GD/SELLER-27338376/imported-mdf-sheet-500x500.jpg"
-                            alt="African Pine"
-                            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-t-lg"
-                        />
-                        <div className="p-4 text-center">
-                            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Imported MDF</h3>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 font-serif leading-tight text-start">
-                                Imported MDF is a premium material with superior finish, strength, and uniformity, ideal for high-end furniture and luxury interiors, though more expensive.
-                            </p>
-                        </div>
-                    </motion.div>
+                    {/* Imported MDF */}
+                    <Link to="/product/importedMDF">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="flex flex-col items-center bg-white rounded-lg shadow-lg hover:shadow-2xl transform transition-all duration-300 ease-in-out p-4"
+                        >
+                            <img
+                                src="https://5.imimg.com/data5/ZB/MU/GD/SELLER-27338376/imported-mdf-sheet-500x500.jpg"
+                                alt="Imported MDF"
+                                className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-t-lg"
+                            />
+                            <div className="p-4 text-center">
+                                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Imported MDF</h3>
+                                <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 font-serif leading-tight text-start">
+                                    Imported MDF is a premium material with superior finish, strength, and uniformity, ideal for high-end furniture.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </Link>
 
 
                     <motion.div
